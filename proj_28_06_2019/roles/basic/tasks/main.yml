@@ -1,9 +1,14 @@
 ---
-- name: "Install Vim"
-  apt: pkg=vim state=present
+# - name: "Install Vim"
+#   apt: pkg=vim state=present
 
-- name: "Install DNS Utils"
-  apt: pkg=dnsutils state=present
+# - name: "Install DNS Utils"
+#   apt: pkg=dnsutils state=present
 
-- name: "Install GIT"
-  apt: pkg=git state=present
+# - name: "Install GIT"
+#   apt: pkg=git state=present
+# OR
+- name: "Installing basic packages for a new installation"
+  apt:
+   pkg: ['dnsutils', 'git', 'vim', 'ntp', 'at', 'lvm2']
+   state: present
